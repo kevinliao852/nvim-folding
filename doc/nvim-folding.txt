@@ -1,0 +1,66 @@
+*nv-folding-plugin.txt*   Plugin Documentation
+
+==============================================================================
+NVIM-FOLDING-PLUGIN                                           *nvim-folding*
+
+A simple Neovim plugin to choose between different folding methods.
+
+==============================================================================
+CONTENTS                                                  *nvim-folding-contents*
+
+1. Introduction ................................................ |nvim-folding-intro|
+2. Installation ................................................ |nvim-folding-install|
+
+3. Usage ....................................................... |nvim-folding-usage|
+4. Configuration ............................................... |nvim-folding-config|
+
+
+==============================================================================
+
+INTRODUCTION                                                *nvim-folding-intro*
+
+nvim-folding is a Neovim plugin that allows users to easily switch between
+different code folding methods, such as syntax-based, indent-based, and Tree-sitter
+based folding.
+
+==============================================================================
+
+
+INSTALLATION                                                *nvim-folding-install*
+
+
+You can install nvim-folding using your favorite plugin manager. Here's an
+example using LazyVim:
+
+    {
+        "kevinliao852/nvim-folding",
+        dir = "~/.config/nvim/lua/plugins/nvim-folding",
+        config = function()
+            require("nvim-folding")
+        end,
+    }
+
+==============================================================================
+
+USAGE                                                        *nvim-folding-usage*
+
+
+The plugin exposes a function that allows you to choose a folding method:
+
+    :lua require("plugins.nvim-folding").choose_folding_method()
+
+You can also bind this function to a key:
+
+
+    vim.api.nvim_set_keymap('n', '<leader>cf', ':lua require("nvim-folding").choose_folding_method()<CR>', { noremap = true, silent = true })
+
+==============================================================================
+
+CONFIGURATION                                                *nvim-folding-config*
+
+nvim-folding is minimal and does not require any setup. However, you can
+customize the key binding as shown in the usage section.
+
+==============================================================================
+
+vim:tw=78:ts=8:ft=help:norl:                            *nvim-folding-plugin-tags*
